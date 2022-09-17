@@ -1,0 +1,30 @@
+<div class="container1">
+    <div class="headline1">
+        <h2>Node チャットルーム</h2>
+    </div>
+    <div class="row1">
+        <form method="post" action="/room">
+            <script type="text/javascript">
+                $(function(){
+                    $("input").on("keydown",function(ev){
+                        if ((ev.which && ev.which === 13) ||(ev.keyCode && ev.keyCode === 13)){
+                            return false;
+                        } else {
+                            return true;
+                    }
+                });
+            });
+            </script>
+            <div class="index-user_name">
+                <input type="text" id="userName" name="userName" class="index-user_name_text" placeholder="ユーザ名">
+                <div id="sameNameError"></div>
+            </div>
+            <div class="index-enter">
+                <input type="button" value="入室する" class="common-button index-enter_button" onclick="enter();">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/javascripts/socket.js"></script>
+<script src="/javascripts/index.js"></script>
